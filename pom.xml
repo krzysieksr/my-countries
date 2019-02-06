@@ -10,7 +10,6 @@
 
     <packaging>war</packaging>
 
-
     <dependencies>
         <!-- Compile/runtime dependencies -->
         <!-- App Engine SDK dependency : only required if you need to explicitly use App Engine API -->
@@ -112,6 +111,7 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.xolstice.maven.plugins</groupId>
                 <artifactId>protobuf-maven-plugin</artifactId>

@@ -3,7 +3,7 @@
     <threadsafe>true</threadsafe>
     <runtime>java8</runtime>
     <static-files>
-        <include path="/**.html" >
+        <include path="/**.html">
         </include>
     </static-files>
 </appengine-web-app>
