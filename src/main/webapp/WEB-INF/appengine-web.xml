@@ -6,4 +6,5 @@
         <include path="/**.html" >
         </include>
     </static-files>
+    <use-google-connector-j>true</use-google-connector-j>
 </appengine-web-app>

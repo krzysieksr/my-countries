@@ -11,6 +11,14 @@
     <packaging>war</packaging>
 
 
+        <properties>
+            <INSTANCE_CONNECTION_NAME>countries2:europe-west2:bazakrajow</INSTANCE_CONNECTION_NAME>
+            <user>postgres</user>
+            <password>postgres</password>
+            <database>bazakrajow_db</database>
+        </properties>
+
+
     <dependencies>
         <!-- Compile/runtime dependencies -->
         <!-- App Engine SDK dependency : only required if you need to explicitly use App Engine API -->
@@ -88,11 +96,11 @@
             <version>2.23.4</version>
             <scope>test</scope>
         </dependency>
-        <!-- [END_EXCLUDE] -->
+
     </dependencies>
 
     <build>
-        <!-- for hot reload of the web application-->
+
         <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/classes</outputDirectory>
         <plugins>
             <!-- [START cloudplugin] -->
