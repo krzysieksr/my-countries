@@ -19,6 +19,7 @@ package java8;
 // [START example]
 
 import com.google.appengine.api.utils.SystemProperty;
+import java8.AddressBookProtos.Person;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,6 +36,10 @@ public class HelloAppEngine extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response)
       throws IOException {
     Properties properties = System.getProperties();
+
+    //TODO
+    Person.Builder person=Person.newBuilder();
+    person.setEmail("somemail@gmail.com");
 
     response.setContentType("text/plain");
     response.getWriter().println("Hello App Engine - Standard using "
