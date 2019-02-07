@@ -1,4 +1,5 @@
 --
+
 -- PostgreSQL database dump
 --
 
@@ -23,7 +24,7 @@ CREATE TABLE IF NOT EXISTS country
   capital         VARCHAR(30),
   GDP             integer,
   government_type VARCHAR(30),
-  currency_id     VARCHAR(5)         NOT NULL,
+  currency        VARCHAR(5)         NOT NULL,
   internet_domain VARCHAR(5)
 );
 
@@ -54,7 +55,7 @@ CREATE TABLE IF NOT EXISTS country_religion
 
 
 INSERT INTO country(name, population, area, capital, GDP, government_type,
-                    currency_id, internet_domain)
+                    currency, internet_domain)
 VALUES ('Polska', 38000000, 200000, 'Warsaw', 23200000, 'democratic republic',
         'PLN', 'pl'),
        ('United Kingdom', 80000000, 150000, 'London', 800000000, 'monarchy', 'GBP', 'uk'),
