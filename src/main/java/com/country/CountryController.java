@@ -1,4 +1,4 @@
-package com.krzysiek.country;
+package com.country;
 
 public class CountryController {
 }
