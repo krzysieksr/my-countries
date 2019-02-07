@@ -16,6 +16,8 @@ public class ConnectionPoolContextListener implements ServletContextListener {
     private static final String DB_PASS = "dupa";
     private static final String DB_NAME = "postgres";
 
+    public static DataSource dataSource;
+
     private DataSource createConnectionPool() {
         HikariConfig config = new HikariConfig();
 
@@ -36,7 +38,7 @@ public class ConnectionPoolContextListener implements ServletContextListener {
             pool = createConnectionPool();
             servletContextEvent.getServletContext().setAttribute("my-pool", pool);
         }
-
+        dataSource = pool;
     }
 
     @Override

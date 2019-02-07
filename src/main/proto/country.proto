@@ -1,0 +1,33 @@
+syntax = "proto2";
+
+option java_package = "com.country";
+option java_outer_classname = "CountryProtos";
+
+message Country {
+    required string name = 1;
+    optional int32 population = 2;
+    optional int32 area = 3;
+
+    enum Language {
+        ENGLISH = 0;
+        POLISH = 1;
+        UKRAINIAN = 2;
+        SCOTS = 3;
+        RUSSIAN = 4;
+    }
+
+    enum Religion {
+        CATHOLICISM = 0;
+        ISLAM = 1;
+        ORTHODOX_CHRISTIAN = 2;
+    }
+
+    repeated Language languages = 4;
+    repeated Religion religions = 5;
+
+    optional string capital = 6;
+    optional int32 gdp = 7;
+    optional string governmentType = 8;
+    optional string currency = 9;
+    optional string internetDomain = 10;
+}
