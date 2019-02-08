@@ -23,4 +23,8 @@ public class CountryService {
     public List<CountryProtos.Country> getAllSortedByPopulation() throws SQLException {
         return countryDAO.getCountriesSortedByPopulation();
     }
+
+    public void createCountry(CountryProtos.Country country) {
+        countryDAO.createCountry(country);
+    }
 }

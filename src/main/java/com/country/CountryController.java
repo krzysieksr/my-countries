@@ -1,5 +1,8 @@
 package com.country;
 
+import com.country.converter.CountryDtoToCountryConverter;
+import com.country.converter.CountryDtoToCountryConverterImpl;
+import com.country.dto.CountryDTO;
 import com.country.guice.BasicModule;
 import com.country.service.CountryService;
 import com.google.gson.Gson;
@@ -20,11 +23,13 @@ import java.util.List;
 @WebServlet(name = "countryController", value = "/countries")
 public class CountryController extends HttpServlet {
     private CountryService countryService;
+    private CountryDtoToCountryConverter countryDtoToCountryConverter;
 
     @Override
     public void init() {
         Injector injector = Guice.createInjector(new BasicModule());
         countryService = injector.getInstance(CountryService.class);
+        countryDtoToCountryConverter = injector.getInstance(CountryDtoToCountryConverterImpl.class);
 
         ownInit(countryService);
     }
@@ -41,7 +46,7 @@ public class CountryController extends HttpServlet {
         try {
             countryList = countryService.getAll();
         } catch (SQLException e) {
-            e.printStackTrace();
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
         }
 
         Gson gson = new Gson();
@@ -73,6 +78,12 @@ public class CountryController extends HttpServlet {
             reader.close();
         }
 
-        System.out.println(sb.toString());
+        Gson gson = new Gson();
+        CountryDTO countryDTO = gson.fromJson(sb.toString(), CountryDTO.class);
+        CountryProtos.Country country = countryDtoToCountryConverter.convert(countryDTO);
+
+        countryService.createCountry(country);
+
+
     }
 }

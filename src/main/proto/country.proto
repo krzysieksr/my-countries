@@ -9,17 +9,18 @@ message Country {
     optional int32 area = 3;
 
     enum Language {
-        ENGLISH = 0;
-        POLISH = 1;
-        UKRAINIAN = 2;
-        SCOTS = 3;
-        RUSSIAN = 4;
+        english = 0;
+        polish = 1;
+        ukrainian = 2;
+        scots = 3;
+        russian = 4;
+        german = 5;
     }
 
     enum Religion {
-        CATHOLICISM = 0;
-        ISLAM = 1;
-        ORTHODOX_CHRISTIAN = 2;
+        kato = 0;
+        islam = 1;
+        orthodox_christian = 2;
     }
 
     repeated Language languages = 4;

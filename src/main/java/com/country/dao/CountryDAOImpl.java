@@ -39,6 +39,24 @@ public class CountryDAOImpl implements CountryDAO {
 
     @Override
     public void createCountry(CountryProtos.Country country) {
+//        String createCountrySql = "INSERT INTO country (name, population, area, capital, GDP, government, currency, internet_domain) VALUES" +
+//                "(?, ?, ?, ?, ?, ?, ?, ?)";
+//
+//        String getCountryIdSql = "SELECT country_id FROM country WHERE name LIKE ?"; // otrzymamy COUNTRY_ID
+//
+//
+//
+//        // for each religia
+//        String getReligionId = "SELECT religion_id FROM religion WHERE religionName LIKE ?"; //
+//
+//
+//        for each religia_id in religions_id
+//                INSERT INTO country_religion (country, religion) VALUES (country_id, religia_id);
+//
+//
+//
+//        //for each język
+//        String getLangId = "SELECT lang_id FROM lang WHERE langName LIKE ?";
 
     }
 
