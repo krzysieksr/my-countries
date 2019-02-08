@@ -65,7 +65,7 @@ VALUES ('Polska', 38000000, 200000, 'Warsaw', 23200000, 'democratic republic',
 INSERT INTO religion(religionName)
 VALUES ('kato'),
        ('islam'),
-       ('orthodox christian');
+       ('orthodox_christian');
 
 INSERT INTO lang(langName)
 VALUES ('english'),
